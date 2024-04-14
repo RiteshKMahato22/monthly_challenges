@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound
+from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
 
 # Create your views here.
 
@@ -24,6 +24,14 @@ def monthly_challenge(request,month):
         return HttpResponse(challenge_text)
     except:
         return HttpResponseNotFound("The month is not yet developed")
+
+def monthly_challenge_by_number(request,month):
+    try:
+        months=list(month_dict.keys())
+        return HttpResponseRedirect(months[month-1])
+    except:
+        return HttpResponseNotFound("Out of range")
+
 
 
 

@@ -12,7 +12,7 @@ def monthly_challenge(request,text):
     elif text=="february":
         url_text="This is february."
     else:
-        HttpResponseNotFound("This month is not yet developed.")
+        return HttpResponseNotFound("This month is not yet developed.")
     return HttpResponse(url_text)
 
 

@@ -20,7 +20,7 @@ month_dict = {
 
 def monthly_challenge(request,month):
     try:
-        challenge_text=month_dict[text]
+        challenge_text=month_dict[month]
         return HttpResponse(challenge_text)
     except:
         return HttpResponseNotFound("The month is not yet developed")

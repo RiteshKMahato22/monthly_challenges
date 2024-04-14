@@ -3,17 +3,27 @@ from django.http import HttpResponse,HttpResponseNotFound
 
 # Create your views here.
 
-def monthly_challenge(request,text):
-    url_text=None
-    if text=="january":
-        url_text="This is January."
-    elif text=="february":
-        url_text="This is february."
-    elif text=="february":
-        url_text="This is february."
-    else:
-        return HttpResponseNotFound("This month is not yet developed.")
-    return HttpResponse(url_text)
+month_dict = {
+    "january":"This is January",
+    "february":"This is february",
+    "march":"This is march",
+    "april":"This is april",
+    "may":"This is may",
+    "june":"This is june",
+    "july":"This is july",
+    "august":"This is august",
+    "september":"This is september",
+    "october":"This is october",
+    "november":"This is november",
+    "december":"This is december"
+}
+
+def monthly_challenge(request,month):
+    try:
+        challenge_text=month_dict[text]
+        return HttpResponse(challenge_text)
+    except:
+        return HttpResponseNotFound("The month is not yet developed")
 
 
 

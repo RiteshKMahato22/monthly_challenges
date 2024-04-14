@@ -28,7 +28,8 @@ def monthly_challenge(request,month):
 def monthly_challenge_by_number(request,month):
     try:
         months=list(month_dict.keys())
-        return HttpResponseRedirect(months[month-1])
+        redirect_month=months[month-1]
+        return HttpResponseRedirect("/challenges/"+redirect_month)
     except:
         return HttpResponseNotFound("Out of range")
 

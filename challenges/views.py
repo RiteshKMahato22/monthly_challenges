@@ -26,11 +26,11 @@ def monthly_challenge(request,month):
         return HttpResponseNotFound("The month is not yet developed")
 
 def monthly_challenge_by_number(request,month):
-    try:
-        months=list(month_dict.keys())
-        redirect_month=months[month-1]
-        return HttpResponseRedirect("/challenges/"+redirect_month)
-    except:
+     months=list(month_dict.keys())
+     try:
+         redirect_month=months[month-1]
+         return HttpResponseRedirect("/challenges/"+redirect_month)
+     except:
         HttpResponseNotFound("Out of range")
 
 

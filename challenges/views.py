@@ -3,5 +3,15 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("This works")
+def month1(request):
+    return HttpResponse("This is January.")
+
+def month2(request):
+    return HttpResponse("This is February.")
+
+def month3(request):
+    return HttpResponse("This is March.")
+
+
+
+

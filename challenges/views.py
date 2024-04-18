@@ -8,7 +8,7 @@ month_dict = {
     "january":"This is January",
     "february":"This is february",
     "march":"This is march",
-    "april":"This is april",
+    "april":"Hi folks! If you are reading this message, let me introduce myself - I am team ezykroot, we are building something special. Our motto is hiring made easy!!",
     "may":"This is may",
     "june":"This is june",
     "july":"This is july",

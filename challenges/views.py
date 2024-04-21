@@ -19,6 +19,15 @@ month_dict = {
     "december":"This is december"
 }
 
+def challenges(request):
+    lis=""
+    months=list(month_dict.keys())
+    for month in months:
+        capitalised_months=month.capitalize()
+        redirect_month=reverse("revname",args=[month])
+        lis+=f"<li><a href=\"{redirect_month}\">{capitalised_months}</li>"
+    response_data=f"<ul>{lis}</ul>"
+    return HttpResponse(response_data)
 def monthly_challenge(request,month):
     try:
         challenge_text=month_dict[month]
